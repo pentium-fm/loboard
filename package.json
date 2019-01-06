@@ -1,0 +1,20 @@
+{
+  "name": "logger-dashboard",
+  "version": "1.0.0",
+  "description": "This a dashboard to help you read logs easily with a nice looking GUI.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "logger",
+    "dashboard",
+    "statistics"
+  ],
+  "author": "Jeffery Hussin <jefferytutorials@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "strip-json-comments": "^2.0.1"
+  }
+}
