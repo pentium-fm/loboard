@@ -4,7 +4,8 @@
   "description": "This a dashboard to help you read logs easily with a nice looking GUI.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node app/index.js"
   },
   "keywords": [
     "logger",
@@ -14,7 +15,12 @@
   "author": "Jeffery Hussin <jefferytutorials@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "errorhandler": "^1.5.0",
     "express": "^4.16.4",
+    "morgan": "^1.9.1",
     "strip-json-comments": "^2.0.1"
   }
 }
