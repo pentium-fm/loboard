@@ -2,9 +2,14 @@
 const fs = require("fs");
 const path = require("path");
 
-exports.getLogs = (req, res) => {
-  console.log("Works");
-  return res.json({ status: 1, apiVersion: "v1" });
-};
+/** 
+ * Get all logs
+ * @public
+ */
+exports.getLogs = async (request, response, next) => response.json({ status: 1, version: "v1" })
 
-exports.getLogsByLevel = (req, res) => {};
+/** 
+ * Get logs by each level
+ * @public
+ */
+exports.getLogsByLevel = async (request, response) => response.json({ status: 1, version: "v1", level: request.params })

@@ -1,4 +1,4 @@
 module.exports = {
-    authorize: async () => true,
-    oAuth: async () => true
+    async authorize() { return true },
+    async oAuth () { return true }
 }

@@ -1,15 +1,27 @@
-const express = require("express");
-
+const express = require('express')	
+/** Middlewares */	
+const authMiddleware = require('../../middlewares/auth.middleware')	
 /** Controllers */
-const LogsController = require("../../controllers/logs.controller");
+const LogsController = require("../../controllers/logs.controller");	
 
-/** Router */
-const router = express.Router();
+ /** Router */	
+const router = express.Router()	
 
-function logsRouter() {
-  router.get("/", LogsController.getLogs);
+ /**	
+ * Routes	
+ */	
+router	
+    .route('/')	
+    /**	
+     * {get} - Gets all log messages	
+     */	
+    .get(LogsController.getLogs)
 
-  return router;
-}
+router
+    .route('/:logLevel')
+    /**
+     * {get} - Get all logs under one level
+     */
+    .get(LogsController.getLogsByLevel)
 
-module.exports = logsRouter;
+module.exports = router;

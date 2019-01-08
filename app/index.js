@@ -2,20 +2,20 @@ const express = require("express");
 
 const bodyParser = require("body-parser");
 const cors = require("cors");
-require("dotenv").config();
-
+const apiRoutes = require("./routes/router");
 const errorhandler = require("errorhandler");
 
-var isProduction = process.env.NODE_ENV === "production";
+/** Load configuration files */
+require("dotenv").config();
 
-const apiRoutes = require("./routes/router");
+var isProduction = process.env.NODE_ENV === "production";
 
 // Create global app object
 var app = express();
 
 app.use(cors());
 
-app.use("/api/v1/", apiRoutes());
+app.use(process.env.API_ROUTE || '/api/v1/', apiRoutes);
 
 // Normal express config defaults
 app.use(require("morgan")("dev"));
