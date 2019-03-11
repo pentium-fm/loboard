@@ -1,3 +1,3 @@
 # loboard
 
-Comming soon
+Coming soon
